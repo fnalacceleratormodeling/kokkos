@@ -86,6 +86,8 @@ private:
       #ifdef KOKKOS_ENABLE_AGGRESSIVE_VECTORIZATION
       #ifdef KOKKOS_ENABLE_PRAGMA_IVDEP
       #pragma ivdep
+      #else
+      #pragma omp simd
       #endif
       #endif
       for ( Member iwork = ibeg ; iwork < iend ; ++iwork ) {
@@ -103,6 +105,8 @@ private:
       #ifdef KOKKOS_ENABLE_AGGRESSIVE_VECTORIZATION
       #ifdef KOKKOS_ENABLE_PRAGMA_IVDEP
       #pragma ivdep
+      #else
+      #pragma omp simd
       #endif
       #endif
       for ( Member iwork = ibeg ; iwork < iend ; ++iwork ) {
@@ -202,6 +206,8 @@ private:
       #ifdef KOKKOS_ENABLE_AGGRESSIVE_VECTORIZATION
       #ifdef KOKKOS_ENABLE_PRAGMA_IVDEP
       #pragma ivdep
+      #else
+      #pragma omp simd
       #endif
       #endif
       for ( Member iwork = ibeg ; iwork < iend ; ++iwork ) {
