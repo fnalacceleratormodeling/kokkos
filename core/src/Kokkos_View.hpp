@@ -1978,7 +1978,7 @@ public:
   View( const View & rhs ) : m_track( rhs.m_track, traits::is_managed ), m_map( rhs.m_map ) {}
 
   KOKKOS_INLINE_FUNCTION
-  View( View && rhs ) : m_track( std::move(rhs.m_track) ), m_map( std::move(rhs.m_map) ) {}
+  View( View && rhs ) noexcept : m_track( std::move(rhs.m_track) ), m_map( std::move(rhs.m_map) ) {}
 
   KOKKOS_INLINE_FUNCTION
   View & operator = ( const View & rhs ) { m_track = rhs.m_track ; m_map = rhs.m_map ; return *this ; }
