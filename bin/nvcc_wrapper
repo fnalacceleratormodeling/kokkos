@@ -373,7 +373,8 @@ if [ $first_xcompiler_arg -eq 0 ]; then
 fi
 
 #Compose host only command
-host_command="$host_compiler $shared_args $host_only_args $compile_arg $output_arg $xcompiler_args $host_linker_args $shared_versioned_libraries_host"
+#host_command="$host_compiler $shared_args $host_only_args $compile_arg $output_arg $xcompiler_args $host_linker_args $shared_versioned_libraries_host"
+host_command="$host_compiler $shared_args $host_only_args $compile_arg $output_arg $host_linker_args $shared_versioned_libraries_host"
 
 #nvcc does not accept '#pragma ident SOME_MACRO_STRING' but it does accept '#ident SOME_MACRO_STRING'
 if [ $replace_pragma_ident -eq 1 ]; then
