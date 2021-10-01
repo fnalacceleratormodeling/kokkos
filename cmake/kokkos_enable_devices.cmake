@@ -71,7 +71,6 @@ IF(KOKKOS_ENABLE_OPENMP)
     COMPILER_SPECIFIC_FLAGS(
       Clang      ${ClangOpenMPFlag}
       IntelLLVM  -fiopenmp
-      AppleClang -Xpreprocessor -fopenmp
       PGI        -mp
       Cray       NO-VALUE-SPECIFIED
       XL         -qsmp=omp
