@@ -78,7 +78,7 @@ IF(KOKKOS_ENABLE_OPENMP)
       DEFAULT    -fopenmp
     )
     COMPILER_SPECIFIC_LIBS(
-      AppleClang -lomp
+      AppleClang OpenMP::OpenMP_CXX
     )
   ENDIF()
 ENDIF()
