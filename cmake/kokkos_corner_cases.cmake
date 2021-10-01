@@ -33,6 +33,7 @@ IF(KOKKOS_CXX_COMPILER_ID STREQUAL AppleClang AND KOKKOS_ENABLE_OPENMP)
   #I have to hackily pretend that compiler flags are compiler definitions
   #and that linker flags are libraries
   #also - this is easier to use than CMakeCheckCXXSourceCompiles
+  FIND_PACKAGE(OpenMP REQUIRED)
   TRY_COMPILE(APPLECLANG_HAS_OMP
     ${KOKKOS_TOP_BUILD_DIR}/corner_cases
     ${KOKKOS_SOURCE_DIR}/cmake/compile_tests/clang_omp.cpp
