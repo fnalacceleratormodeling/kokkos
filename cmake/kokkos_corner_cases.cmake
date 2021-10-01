@@ -36,8 +36,7 @@ IF(KOKKOS_CXX_COMPILER_ID STREQUAL AppleClang AND KOKKOS_ENABLE_OPENMP)
   TRY_COMPILE(APPLECLANG_HAS_OMP
     ${KOKKOS_TOP_BUILD_DIR}/corner_cases
     ${KOKKOS_SOURCE_DIR}/cmake/compile_tests/clang_omp.cpp
-    COMPILE_DEFINITIONS -Xpreprocessor -fopenmp
-    LINK_LIBRARIES -lomp
+    LINK_LIBRARIES OpenMP::OpenMP_CXX
   )
   IF (NOT APPLECLANG_HAS_OMP)
     UNSET(APPLECLANG_HAS_OMP CACHE) #make sure CMake always re-runs this
