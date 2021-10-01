@@ -70,15 +70,15 @@ IF(KOKKOS_ENABLE_OPENMP)
   ELSE()
     COMPILER_SPECIFIC_FLAGS(
       Clang      ${ClangOpenMPFlag}
+      AppleClang NO-VALUE-SPECIFIED
       IntelLLVM  -fiopenmp
-      AppleClang -Xpreprocessor -fopenmp
       PGI        -mp
       Cray       NO-VALUE-SPECIFIED
       XL         -qsmp=omp
       DEFAULT    -fopenmp
     )
     COMPILER_SPECIFIC_LIBS(
-      AppleClang -lomp
+      AppleClang OpenMP::OpenMP_CXX
     )
   ENDIF()
 ENDIF()
