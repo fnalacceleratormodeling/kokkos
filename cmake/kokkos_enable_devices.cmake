@@ -70,6 +70,7 @@ IF(KOKKOS_ENABLE_OPENMP)
   ELSE()
     COMPILER_SPECIFIC_FLAGS(
       Clang      ${ClangOpenMPFlag}
+      AppleClang NO-VALUE-SPECIFIED
       IntelLLVM  -fiopenmp
       PGI        -mp
       Cray       NO-VALUE-SPECIFIED
