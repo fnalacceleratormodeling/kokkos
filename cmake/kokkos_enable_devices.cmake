@@ -74,14 +74,14 @@ IF(KOKKOS_ENABLE_OPENMP)
     COMPILER_SPECIFIC_FLAGS(
       Clang      ${ClangOpenMPFlag}
       IntelLLVM  -fiopenmp
-      AppleClang -Xpreprocessor -fopenmp
+      AppleClang NO-VALUE-SPECIFIED
       NVHPC      -mp
       Cray       NO-VALUE-SPECIFIED
       XL         -qsmp=omp
       DEFAULT    -fopenmp
     )
     COMPILER_SPECIFIC_LIBS(
-      AppleClang -lomp
+      AppleClang OpenMP::OpenMP_CXX
     )
   ENDIF()
 ENDIF()
